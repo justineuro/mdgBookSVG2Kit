@@ -24,7 +24,7 @@ To examine an example of a book (`mdgBookSVG2v1.pdf`) that was generated in a si
 ## Important Parameters
 To personalize one's generated book (in addition to the randomly generated DCMS), one may want to change some of the default parameters/values in the following (all three files are initially found in the main directory but are eventually moved into the `res` folder): 
 
-- `mdgBookSVG2v1.tex` - (main latex file) see lines 36-46; also, one may have to occassionally change the \\topmargin and \\textheight values on lines 298 and 299 of this file to ensure that each audio MIDI file will be on the same page as the corresponding musical score; these values affect the pages containing the 150 DMScs and are different from the global values that appear on lines 30 and 31 near the top part of the file
+- `mdgBookSVG2v1.tex` - (main latex file) see lines 36-46; also, one may have to occassionally change the \\topmargin and \\textheight values on lines 298 and 299 of this file to ensure that each audio MIDI file will be on the same page as the corresponding musical score; these values affect the pages containing the 150 DCSMs and are different from the global values that appear on lines 30 and 31 near the top part of the file
 - `mdgBookSVG2v1-cover.tex`- makes the cover of the book; see lines 36-46 of `mdgBookSVG4v1.tex` for default values
 - `hyperref.cfg` - contains the `\hypersetup` keyvalues; one may wish to change the default value of `pdfauthor`, among other keyvalues; see the documentation for the TeX package `hyperref` for more information on these keyvalues
 
