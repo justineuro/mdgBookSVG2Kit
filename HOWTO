@@ -6,13 +6,13 @@
 # Create three sub-folders: `bin`, `images`, `res`, under the `mdgBookSVG-main` directory
 #		`bin` - folder for Bash files: mdg22mid+svg.sh, mdg22midRndN+svg.sh, mdgEntriesSVGcp2.sh
 #		`images` - folder for image files for book cover/title page: 1ed.png, FrontCover.pdf
-# 	`res` - folder for ABC, SVG, PDF output files; initially contains: 
-#		cpebBach-gclef.abc - table of measures g-clef
-#		cpebBach-fclef.abc - table of measures f-clef
-#		hyperref.cfg - file containing the \hypersetup{} keyvalues for the \hyperref pkg
-#		mdg4.bib - bibliography file for the book
-#		mdgBookSVG2v1.tex - main LaTeX file for book 
-#		mdgBookSVG2v1-cover.tex - LaTeX file for cover page
+#		`res` - folder for ABC, SVG, PDF output files; should initially contain: 
+#			cpeBach-gclef.abc - table of measures g-clef
+#			cpeBach-fclef.abc - table of measures f-clef
+#			hyperref.cfg - file containing the \hypersetup{} keyvalues for the \hyperref pkg
+#			mdg4.bib - bibliography file for the book
+#			mdgBookSVG2v1.tex - main LaTeX file for book 
+#			mdgBookSVG2v1-cover.tex - LaTeX file for cover page
 
 	mkdir bin images res
 	mv *.sh bin
