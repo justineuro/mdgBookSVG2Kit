@@ -1,0 +1,72 @@
+%%scale .65
+%%pagewidth	8.5in
+%%barsperstaff	6 % number of measures per staff
+%%equalbars true
+%%measurebox false % measure numbers in a box
+%%measurenb	0
+%%leftmargin 3cm
+X:1
+T:
+%%setfont-1 Courier-Bold 12
+%%setfont-2 Courier-Bold 22
+%%setfont-3 Courier-Bold 16
+%%setfont-4 Courier-Bold-Italic 19
+%%musicspace 1cm
+T:$4Einfall Counterpoint Measures (G-Clef)$0
+T:$1[from https://opus-infinity.org/dice_games/cpebach_counterpoint/measures/; $0
+T:$1 or from https://www.jstor.org/stable/843301]$0
+C:  %empty line
+C:attributed to C.P.E. Bach
+S:
+M:2/2
+L:1/4
+Q:1/4=90
+%%staves[1 2 3 4 5 6 7 8 9] 
+V:1 clef=treble
+V:2 clef=treble
+V:3 clef=treble
+V:4 clef=treble
+V:5 clef=treble
+V:6 clef=treble
+V:7 clef=treble
+V:8 clef=treble
+V:9 clef=treble
+K:C
+%
+[V:1]
+"@-70,-20 $21$0"ege"@-45,35 $3Bar 1$0"c | dG"@-45,23 $3Bar 2$0"g2 | g/a/ b/c'/ "@-50,25 $3Bar 3$0"f2 | ff e/c/ a/"@-75,33 $3Bar 4$0"c/ | d3 c/"@-70,30 $3Bar 5$0"d/ | e/f/ d/e/ "@-50,33 $3Bar 6$0"c2 ||
+[V:2]
+"@-70,-20 $22$0"z/e/ g/f/ e/g/ e/c/ | g/a/ g/^f/ g2 | gcf2 | f e/d/ ec | d g/a/g3/2 f/ | e/f/ e/d/ c2 ||
+[V:3]
+"@-70,-20 $23$0"e3c | e/G/ g/^f/ g2 | g/c/ d/e/ ff | f/f/ e/d/ e/e/ d/c/ | d2d2 | e d/e/ c2 ||
+[V:4]
+"@-70,-20 $24$0"cGec | ddg2 | g/c/ B/c/ f2 | f e/d/ e/g/ e/c/ | d4 | e/d/ e/d/ c2 ||
+[V:5]
+"@-70,-20 $25$0"z c/d/ ec | d g/^f/ g2 | g/g/ c'/2g/ ff | f (ff/)e/ d/c/ | dg2 f/g/ | e/f/ g/e/ c2 ||
+[V:6]
+"@-70,-20 $26$0"e/f/ g/f/ f/e/ e/c/ | g/G/ g/g/ g2 | g2f2 |f3/2 f/ e/d/ e/c/ | d d/c/ d/e/ f | e/g/ e/d/ c2 ||
+[V:7]
+"@-70,-20 $27$0"c2e2 | d2g2 | g/g/ f/e/ f2 | ff2e | dGgf | e/c/ e/d/ c2 ||
+[V:8]
+"@-70,-20 $28$0"z/c/ c/e/ e/e/ d/c/ | d/d/ g/^f/ g2 | g/e/ d/c/ ff | ffeg | dgGf | e3/2 d/ c2 ||
+[V:9]
+"@-70,-20 $29$0"c c/d/ e/d/ e/c/ | gGg2 | g/c/ f/e/ f2 | f/B/ c/d/ e/g/ f/e/ | d g/a/ g/a/ f/g/ | e/c'/ g/e/ c2 ||
+
+[V:1]
+"@-70,-20 $21$0"ege"@-30,25 $3Bar 1$0"c x| z/e/ g/f/ e/g/ e/"@-60,25 $3Bar 2$0"c/ x| e3"@-55,25 $3Bar 3$0"c x| cGe"@-55,25 $3Bar 4$0"c x| z c/d/ e"@-55,25 $3Bar 5$0"c x| e/f/ g/f/ f/e/ e/"@-60,25 $3Bar 6$0"c/ x|| 
+[V:2]
+c2e2 x| z/c/ c/e/ e/e/ d/c/ x| c c/d/ e/d/ e/c/ x| dGg2 x| g/a/ g/^f/ g2 x| e/G/ g/^f/ g2 x|| 
+[V:3]
+ddg2 x| d g/^f/ g2 x| d2g2 x| g/G/ g/g/ g2 x| d/d/ g/^f/ g2 x| gGg2 x|| 
+[V:4]
+g/a/ b/c'/ f2 x| gcf2 x| g/c/ d/e/ ff x| g/c/ B/c/ f2 x| g/g/ c'/2g/ ff x| g2f2 x|| 
+[V:5]
+g/g/ f/e/ f2 x| g/e/ d/c/ ff x| g/c/ f/e/ f2 x| ff e/c/ a/c/ x| f e/d/ ec x| f/f/ e/d/ e/e/ d/c/ x|| 
+[V:6]
+f e/d/ e/g/ e/c/ | f (ff/)e/ d/c/ | f3/2 f/ e/d/ e/c/ | ff2e | ffeg | f/B/ c/d/ e/g/ f/e/ || X
+[V:7]
+d3 c/d/ | d g/a/g3/2 f/ | d2d2 | d4 | dg2 f/g/ | d d/c/ d/e/ f || X
+[V:8]
+dGgf | dgGf | d g/a/ g/a/ f/g/ | e/f/ d/e/ c2 | e/f/ e/d/ c2 | e d/e/ c2 || X
+[V:9]
+e/d/ e/d/ c2 | e/f/ g/e/ c2 | e/g/ e/d/ c2 | e/c/ e/d/ c2 | e3/2 d/ c2 | e/c'/ g/e/ c2 ||

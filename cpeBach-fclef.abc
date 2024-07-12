@@ -1,0 +1,53 @@
+%%scale .65
+%%pagewidth	8.5in
+%%barsperstaff	6 % number of measures per staff
+%%equalbars true
+%%measurebox false % measure numbers in a box
+%%measurenb	0
+%%leftmargin 3cm
+X:1
+T:
+%%setfont-1 Courier-Bold 12
+%%setfont-2 Courier-Bold 22
+%%setfont-3 Courier-Bold 16
+%%setfont-4 Courier-Bold-Italic 19
+%%musicspace 1cm
+T:$4Einfall Counterpoints Measures (F-Clef)$0
+T:$1[from https://opus-infinity.org/dice_games/cpebach_counterpoint/measures/; $0
+T:$1 or from https://www.jstor.org/stable/843301]$0
+C: %empty line
+C:attributed to C.P.E. Bach
+S:
+M:2/2
+L:1/4
+Q:1/4=90
+%%staves[1 2 3 4 5 6 7 8 9] 
+V:1 clef=bass
+V:2 clef=bass
+V:3 clef=bass
+V:4 clef=bass
+V:5 clef=bass
+V:6 clef=bass
+V:7 clef=bass
+V:8 clef=bass
+V:9 clef=bass
+K:C
+%
+[V:1]
+"@-70,-25 $21$0"z2C"@-40,20 $3Bar 1$0"C | C B,/A,/ B,"@-55,30 $3Bar 2$0"G, | A,2 D/C/B,/"@-60,28 $3Bar 3$0"A,/ |  G, A,/B,/ "@-35,22 $3Bar 4$0"C2 | C B,/A,/"@-35,24 $3Bar 5$0"B,2 | "@-15,20 $3Bar 6$0"C4 ||
+[V:2]
+"@-70,-25 $22$0"C3C | CCB,B, | A,3_A, | G,2 CC | C B,/A,/B, A,/B,/ | C4 ||
+[V:3]
+ "@-70,-25 $23$0"C E/D/ CC | C/C/ B,/A,/ C/B,/ A,/G,/ | A,A, A,/C/ A,/F,/ | G,G,C2 | C (B,B,/)A,/ B, | C4 || 
+[V:4]
+ "@-70,-5 $24$0"C,2C2 | C B,/A,/ B,/D/ B,/G,/ | (A,2 A,/)B,/ C/D/ | G,/G,/ A,/B,/ CC | C/A,/ B,/C/ B,/C/ A,/B,/ | C4 ||
+[V:5] 
+ "@-70,-25 $25$0"z2 C2 | CC2B, | A,2 D,/F,/ E,/D,/ | G,/D/ C/B,/ CC | CCB,B, | C4 || 
+[V:6]
+ "@-70,-15 $26$0"z E,/D,/ C,C | CCB,E | A,3D | G,G,CC | CB,2 A,/B,/ | C4 ||
+[V:7]
+ "@-70,-25 $27$0"C4 | C B,/A,/ B,/C/ D/E/ | A,(A,A,/)A,/ G,/F,/ | G,/G,/ C/B,/ CC | C2B,2 | C4 || 
+[V:8]
+ "@-70,-5 $28$0"C, E,/G,/ CC | CB, E/D/ C/B,/ | A,A,2D | G, C/B,/ C2 | C2B, A,/B,/ | C4 || 
+[V:9]
+ "@-70,-25 $29$0"C/C,/ E,/G,/ CC | C/C/ B,/A,/ C/B,/ A,/G,/ | (A,2A,/)C/ B,/A,/ | G,2C,C | C/C/ B,/A,/ B,/B,/ A,/B,/ | C4 || 
