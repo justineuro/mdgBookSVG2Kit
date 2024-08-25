@@ -8,9 +8,8 @@
     svg {display:block}
 </style>
 
-<p><center>
-<script type="text/vnd.abc">
-%abc-4.93
+<center>
+%abc-4.49
 %<![CDATA[
 %%scale 0.65
 %%pagewidth 21.10cm
@@ -50,8 +49,8 @@ K:C
 [V:1] e/g/ e/d/ c2 :|]
 [V:2] C4 :|]
 %]]>;
-</script>
-</center></p>
+
+</center>
 <p><br/></p>
 (When online, left-clicking towards the left margin of the image above plays an audio of the sample DCSM shown. Thanks to `abc2svg` (see the [`abc2svg` Documentation](https://chiselapp.com/user/moinejf/repository/abc2svg/doc/trunk/README.md) for more info).
 
