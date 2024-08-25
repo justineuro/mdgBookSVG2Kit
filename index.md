@@ -10,7 +10,7 @@
 
 <p><center>
 %abc-4.93
-%&lt;![CDATA[
+%<![CDATA[
 %%scale 0.65
 %%pagewidth 21.10cm
 %%bgcolor white
@@ -48,7 +48,7 @@ K:C
 %6
 [V:1] e/g/ e/d/ c2 :|]
 [V:2] C4 :|]
-%]]&gt;
+%]]>;
 </center></p>
 <p><br/></p>
 (When online, left-clicking towards the left margin of the image above plays an audio of the sample DCSM shown. Thanks to `abc2svg` (see the [`abc2svg` Documentation](https://chiselapp.com/user/moinejf/repository/abc2svg/doc/trunk/README.md) for more info).
