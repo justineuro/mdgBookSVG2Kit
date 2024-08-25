@@ -2,8 +2,8 @@
 
 **Here's an opportunity for one to "compose" double counterpoints of six measures (DCSM) and to author a Collection Book!!!**  
 
-<script src="https://raw.githubusercontent.com/justineuro/abc2svg-2024-gh/main/abc2svg-1.js"></script>
-<script src="https://raw.githubusercontent.com/justineuro/abc2svg-2024-gh/main/snd-1.js"></script>
+<script src="https://justineuro.github.io/abc2svg-2024-gh/abc2svg-1.js"></script>
+<script src="https://justineuro.github.io/abc2svg-2024-gh/snd-1.js"></script>
 <style type='text/css'>
     svg {display:block}
 </style>
