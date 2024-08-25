@@ -2,7 +2,56 @@
 
 **Here's an opportunity for one to "compose" double counterpoints of six measures (DCSM) and to author a Collection Book!!!**  
 
-![](./cpeb-DCSM.svg)
+<script src="http://moinejf.free.fr/js/abcweb-1.js"></script>
+<script src="http://moinejf.free.fr/js/snd-1.js"></script>
+<style type='text/css'>
+    svg {display:block}
+</style>
+
+<p><center>
+%abc-4.93
+%&lt;![CDATA[
+%%scale 0.65
+%%pagewidth 21.10cm
+%%bgcolor white
+%%topspace 0
+%%composerspace 0
+%%leftmargin 0.80cm
+%%rightmargin 0.80cm
+X:2044257688
+T:1w4-3w5-4w3-2w6-7w1-6w1
+%%setfont-1 Courier-Bold 14
+T:$1cpeb::1w4-12w14-22w21-29w33-43w37-51w46-:$0
+T:$1Perm. No.: 2044257688$0
+M:2/2
+L:1/4
+Q:1/4=90
+%%staves [1 2]
+V:1 clef=treble
+V:2 clef=bass
+K:C
+%1
+[V:1]|: egec |\
+[V:2]|: C,2C2 |\
+%2
+[V:1] e/G/ g/^f/ g2 |\
+[V:2] CC2B, |\
+%3
+[V:1] g/c/ B/c/ f2 |\
+[V:2] A,A, A,/C/ A,/F,/ |\
+%4
+[V:1] f e/d/ ec |\
+[V:2] G,G,CC |\
+%5
+[V:1] dGgf |\
+[V:2] C B,/A,/B,2 |\
+%6
+[V:1] e/g/ e/d/ c2 :|]
+[V:2] C4 :|]
+%]]&gt;
+</center></p>
+<p><br/></p>
+(When online, left-clicking towards the left margin of the image above plays an audio of the sample DCSM shown. Thanks to `abc2svg` (see the [`abc2svg` Documentation](https://chiselapp.com/user/moinejf/repository/abc2svg/doc/trunk/README.md) for more info).
 
 This folder contains materials that allow the user to author a book containing a collection of [Musical Dice Games (MDG)](https://en.wikipedia.org/wiki/Musikalisches_W%C3%BCrfelspiel) DCSM, generated based on the rules given in C.P.E. Bach's [*Einfall, einen doppelten Contrapunct in der Octave von sechs Tacten zu machen, ohne die Regeln davon zu wissen*](https://www.jstor.org/stable/843301).
 
@@ -45,6 +94,8 @@ MDG Book kits similar to this may be found on related GitHub sites such as:
 - [mdgBookSVG3Kit](https://justineuro.github.io/mdgBookSVG3Kit) - One-Command Kit for Creating MDG (Kirnberger) Minuet-Trios Collection Book, the minuet-trios are generated based on the rules given in [*Der allezeit fertige Polonoisen- und Menuettencomponist* (*1757*)](https://imslp.org/wiki/Der_allezeit_fertige_Polonoisen-_und_Menuettencomponist_(Kirnberger%2C_Johann_Philipp)) 
 - [mdgBookSVG4Kit](https://justineuro.github.io/mdgBookSVG4Kit) - One-Command Kit for Creating MDG Minuet-Trios Collection Book, the minuet-trios are generated based on the rules given in [*Table pour composer des Minuets et des Trios &agrave; la infinie*](http://imslp.org/wiki/Table_pour_composer_des_Minuets_et_des_Trios_%C3%A0_la_infinie_(Stadler,_Maximilian)) (also known as or *Tabelle welcher aus man unzählige Menuetten und Trio für das Klavier herauswürfeln kann* or *Gioco Filarmonico o sia maniera facile per comporre un infinito numero di menuetti e trio, anche senza sapere il contrapunto*) 
 - [mdgBookSVG4itKit](https://github.com/justineuro/mdgBookSVG4itKit) - MDG based on [*Gioco Filarmonico o sia maniera facile per comporre un infinito numero di menuetti e trio, anche senza sapere il contrapunto*](http://imslp.org/wiki/Table_pour_composer_des_Minuets_et_des_Trios_%C3%A0_la_infinie_(Stadler,_Maximilian)); similar to  [mdgBookSVG4Kit](https://github.com/justineuro/mdgBookSVG4Kit) but arranged for three (3) instruments
+- [mdgBookSVG6Kit](https://justineuro.github.io/mdgBookSVG4Kit) - One-Command Kit for Creating MDG Scottish Dances (Dance-Trios) Collection Book, each dance-trio is generated based on the rules given in [*Kunst, Schottische Taenze zu componiren, ohne musicalisch zu sein*](https://imslp.org/wiki/Kunst%2C_Schottische_Taenze_zu_componiren%2C_ohne_musicalisch_zu_sein_(Gerlach%2C_Gustav))
+
 
 ## Related Sites
 - [Opus Infinity](https://opus-infinity.org/) - Collaborative work of Robbert Harms, Hein Moors, and Suus van Petegem whose goal is to unravel the mystery behind the tables used for generating MDGs.  Site visitors can generate MDGs based on works of Kirnberger, Mozart, Stadler/Haydn, Bach, and Gerlach.  Corresponding audio files (<tt>mid</tt>, <tt>ogg</tt>, and/or <tt>mp3</tt>) and image files (<tt>pdf</tt> or <tt>png</tt>) are also made available for listening, viewing, or downloading.
