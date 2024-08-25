@@ -52,7 +52,7 @@ K:C
 </center>
 
 <br/>
-(When online, left-clicking towards the left margin of the image above plays an audio of the sample DCSM shown. Thanks to `abc2svg` (see the [`abc2svg` Documentation](https://chiselapp.com/user/moinejf/repository/abc2svg/doc/trunk/README.md) for more info).
+[When online, left-clicking towards the left margin of the image above plays an audio of the sample DCSM shown. Thanks to `abc2svg` (see the [`abc2svg` Documentation](https://chiselapp.com/user/moinejf/repository/abc2svg/doc/trunk/README.md) for more info).]
 
 This folder contains materials that allow the user to author a book containing a collection of [Musical Dice Games (MDG)](https://en.wikipedia.org/wiki/Musikalisches_W%C3%BCrfelspiel) DCSM, generated based on the rules given in C.P.E. Bach's [*Einfall, einen doppelten Contrapunct in der Octave von sechs Tacten zu machen, ohne die Regeln davon zu wissen*](https://www.jstor.org/stable/843301).
 
