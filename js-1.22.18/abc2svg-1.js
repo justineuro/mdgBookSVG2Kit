@@ -8682,20 +8682,20 @@ function tosvg(in_fname,		// file name
 		return src
 	} // uncomment()
 
-	// set the sequence showing the source of the current tune in sav.src
-	function set_src() {
+	// set the sequence showing the source and save it in sav.src
+	function set_src(stag, se) {
 	    var	r, t,
-		etag = "",
-		stag = cfmt.show_source,
-		eot = file.indexOf('\n\n', bol)		// end of tune
+		etag = ""
 
-		if (eot < 0)
-			eot = file.length
+		if (!se)
+			se = file.indexOf('\n\n', bol)	// end of tune
+		if (se < 0)
+			se = eof
 		if (typeof stag != "object") {		// set the tag after source
 			if (stag[0] != 'b' && stag[0] != 'a' && stag[0] != '+')
 				stag = 'b' + stag	// default: source before
 			if (stag[1] != '<')		// (if bool)
-				stag = "b<pre>"
+				stag = stag[0] + "<pre>"
 			r = stag.match(/<\/?[^>]*>/g)
 			while (1) {
 				t = r.pop()
@@ -8709,7 +8709,7 @@ function tosvg(in_fname,		// file name
 			cfmt.show_source = stag = [stag, etag]
 		}
 		t = stag[0].slice(1)
-			+ clean_txt(file.slice(bol - 2, eot))
+			+ clean_txt(file.slice(bol, se))
 			+ stag[1]
 		if (stag[0][0] == '+' && sav.src)
 			sav.src += t
@@ -8950,12 +8950,30 @@ function tosvg(in_fname,		// file name
 				continue
 			}
 			switch (a[1]) {
+			case "show_source":
+				b = uncomment(a[2])
+				switch (b[0]) {
+				case '*':
+					i = file.indexOf('\n' + line0 + line1
+							+ "show_source", eol)
+					bol = parse.eol
+					set_src(b, i)
+					user.img_out(sav.src)
+					// fall thru
+				case '0':
+					b = ""
+					// fall thru
+				default:
+					cfmt[a[1]] = b
+					// fall thru
+				}
+				continue
 			case "select":
 				if (parse.state != 0) {
 					syntax(1, errs.not_in_tune, "%%select")
 					continue
 				}
-				select = uncomment(text.slice(7))
+				select = uncomment(a[2])
 				if (select[0] == '"')
 					select = select.slice(1, -1);
 				if (!select) {
@@ -9094,16 +9112,14 @@ function tosvg(in_fname,		// file name
 			sav.mac = clone(mac);
 			sav.maci = clone(maci);
 			if (cfmt.show_source) {
-				set_src()
+				bol -= 2
+				set_src(cfmt.show_source)
 				if (cfmt.show_source[0][0] == 'b')
 					user.img_out(sav.src)
 				user.img_out('<div class="source">')
 			}
 			info.X = text;
 			parse.state = 1			// tune header
-			if (user.page_format
-			 && blkdiv < 1)		// (if no newpage)
-				blkdiv = 1	// the tune starts by the next SVG
 			if (parse.tune_opts)
 				tune_filter()
 			continue
@@ -11047,9 +11063,8 @@ function set_nl(s) {			// s = start of line
 		for (s2 = s; s2 && s2.time == s.time; s2 = s2.ts_next) {
 			switch (s2.type) {
 			case C.KEY:
-				if (!s.fmt.keywarn
-				 || s2.invis
-				 || (!s2.k_sf && !s2.k_a_acc))	// no accidental
+				if (!s2.fmt.keywarn
+				 || s2.invis)
 					continue
 				for (s1 = s.ts_prev; s1 ;s1 = s1.ts_prev) {
 					if (s1.type != C.METER)
@@ -11067,7 +11082,7 @@ function set_nl(s) {			// s = start of line
 				if (!s2.prev)		// start of voice
 					continue
 				if (s2.type == C.CLEF) {
-					if (s2.invis)	// if 'K: clef=none' after bar
+					if (s2.clef_none) // if 'K: clef=none' after bar
 						break
 					for (s1 = s.ts_prev; s1; s1 = s1.ts_prev) {
 						switch (s1.type) {
@@ -16367,8 +16382,8 @@ function parse_acc_pit(line) {
 // - normal = ABC note
 // - octave = 'o' + ABC note in C..B interval
 // - key    = 'k' + scale index
-// - tonic  = 't' + ABC note
-// - all    = 'all'
+// - tonic  = 't' + mode index
+// - any    = '*'
 // The 'map' is stored in the note. It is an array of
 //	[0] array of heads (glyph names)
 //	[1] print (note)
@@ -16382,27 +16397,36 @@ function set_map(p_v, note, acc,
 	if (!map)
 		return
 
-	if (!map[nn]) {
-		nn = 'o' + nn.replace(/[',]+/, '')	// ' octave
-		if (!map[nn]) {
-			nn = 'k' + ntb[(note.pit + 75 -
-					p_v.ckey.k_sf * 11) % 7]
-		    if (!map[nn]) {
-			nn = 't' + (acc			// 'tonic'
-					? ['__','_','','^','^^'][acc + 2]
-					: '')
-				+ ntb[(note.pit + 75
-				    - (p_v.ckey.k_sf
+	// test if 'nn' is in the map
+	function map_p() {
+		if (map[nn])
+			return 1 //true
+		nn = 'o' + nn.replace(/[',]+/, '')	// '
+		if (map[nn])
+			return 1 //true
+		nn = 'k' + ['__','_','=','^','^^','='][acc + 2]	// key chromatic
+			+ ntb[(note.pit + 75 - p_v.ckey.k_sf * 11) % 7]
+		if (map[nn])
+			return 1 //true
+		nn = nn.replace(/[_=^]/g,'')		// key diatonic
+		if (map[nn])
+			return 1 //true
+		nn = 't' + ['__','_','=','^','^^','='][acc + 2]	// tonic chromatic
+			+ ntb[(note.pit + 75
+				- (p_v.ckey.k_sf
 					- [0, -2, -4, 1, -1, -3, -5][p_v.ckey.k_mode])
 						* 11) % 7]
-			if (!map[nn]) {
-				nn = 'all'		// 'all'
-				if (!map[nn])
-					return
-			}
-		    }
-		}
-	}
+		if (map[nn])
+			return 1 //true
+		nn = nn.replace(/[_=^]/g,'')		// tonic diatonic
+		if (map[nn])
+			return 1 //true
+		nn = '*'				// any note
+		return map[nn]
+	} // map_p()
+
+	if (!map_p())					// note in the map?
+		return					// no
 	map = map[nn]
 
 	if (trp_p) {
@@ -20120,6 +20144,8 @@ function svg_flush() {
 		psvg.ps_flush(true);	// + setg(0)
 
 	// start a block if needed
+	if (parse.state == 1 && user.page_format && !blkdiv)
+		blkdiv = 1		// new tune
 	if (blkdiv > 0) {
 		user.img_out(blkdiv == 1 ?
 			'<div class="nobrk">' :
@@ -20903,9 +20929,9 @@ function not2abc(pit, acc) {
     var	i,
 	nn = ''
 
-	if (acc && acc != 3) {
+	if (acc) {
 		if (typeof acc != "object") {
-			nn = ['__', '_', '', '^', '^^'][acc + 2]
+			nn = ['__', '_', '', '^', '^^', '='][acc + 2]
 		} else {
 			i = acc[0]
 			if (i > 0) {
@@ -20940,17 +20966,12 @@ function get_map(text) {
 		return
 	}
 	ns = a[1]
-	if (ns[0] == '*' || ns.indexOf("all") == 0) {
-		ns = 'all'
-	} else {
-		if (ns.indexOf("octave,") == 0	// remove the octave part
+	if (ns != '*') {
+ 		if (ns.indexOf("octave,") == 0	// remove the octave part
 		 || ns.indexOf("key,") == 0
 		 || !ns.indexOf("tonic,")) {
 			ty = ns[0]
-			ns = ns.split(',')[1]
-			ns = ns.replace(/[,']+/, '').toUpperCase() //'
-			if (ns.indexOf("key,") == 0)
-				ns = ns.replace(/[=^_]+/, '')
+			ns = ns.split(',')[1].toUpperCase()
 		}
 		tmp = new scanBuf
 		tmp.buffer = ns
@@ -23877,4 +23898,4 @@ abc2svg.modules = {
 		return this.nreq == nreq_i
 	}
 } // modules
-abc2svg.version="project-name: abc2svg repository: /home/juro/Music/abc/abc2svg-2024/abc2svg.fossil local-root: /home/juro/Music/abc/abc2svg-2024/ config-db: /home/juro/.fossil project-code: c97472142b93166b1a8c3ea5ab98265d1d1febcc checkout: ea79685afddec3a0a418710cbd0cc42477d028e9 2024-08-07 17:07:04 UTC parent: c1beeb2fd1f6a723db33d9d705ddcf45e20e513d 2024-08-07 13:15:14 UTC tags: trunk comment: core: fix: bad tonic mapping on implicit scale accidental - reported by Hudson Lacerda (user: jef) check-ins: 3421";abc2svg.vdate="2024-08-09"
+abc2svg.version="project-name: abc2svg repository: /home/juro/Music/abc/abc2svg-2024/abc2svg.fossil local-root: /home/juro/Music/abc/abc2svg-2024/ config-db: /home/juro/.fossil project-code: c97472142b93166b1a8c3ea5ab98265d1d1febcc checkout: 24b2e603ce40dd3a938f676b617226d1e6cba949 2024-08-24 12:04:10 UTC parent: 74eba621d0995b3a07b949f79b5eb169f52ff89f 2024-08-20 07:06:23 UTC tags: trunk comment: core: fix: lack of key warning at EOL on K:C since commit [28a575c02a] (user: jef) check-ins: 3426";abc2svg.vdate="2024-08-26"

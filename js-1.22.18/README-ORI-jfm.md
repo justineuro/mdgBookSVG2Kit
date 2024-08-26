@@ -1,5 +1,8 @@
-**[Source: https://chiselapp.com/user/moinejf/repository/abc2svg/doc/trunk/README.md]**  
-
+<style>
+p{margin-left:.5cm;max-width:21cm}
+li{margin-left:.5cm;max-width:20cm}
+li p{margin-left:0}
+</style>
 ## abc2svg
 
 **abc2svg** is a set of ECMAscript files that handle the

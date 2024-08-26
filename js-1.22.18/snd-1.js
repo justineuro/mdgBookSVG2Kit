@@ -1535,7 +1535,7 @@ function Audio5(i_conf) {
 	init_b64d()			// initialize base64 decoding
 
 	if (!conf.sfu)
-		conf.sfu = "https://justineuro.github.io/Scc1t2-gh"	// set the default soundfont location
+		conf.sfu = "Scc1t2"	// set the default soundfont location
 
 	// get the device model
 	if (navigator.userAgentData
