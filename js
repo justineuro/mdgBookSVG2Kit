@@ -1,1 +1,1 @@
-/home/juro/Music/mdg/cpeBach/mdgBookSVG2Kit/js-1.22.18
+/home/juro/Music/mdg/cpeBach/mdgBookSVG2Kit/js-1.22.19
