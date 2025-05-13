@@ -13,21 +13,21 @@
 #		Counterpoint ("Einfall")
 #
 #      AUTHOR:	J.L.A. Uro (justineuro@gmail.com)
-#     VERSION:	1.0.5
+#     VERSION:	1.0.6
 #     LICENSE:	Creative Commons Attribution 4.0 International License (CC-BY)
 #     CREATED:	2021/02/21 17:28:40
-#    REVISION:	2024/07/12 08:53:47 
+#    REVISION:	2025/05/13 10:23:44 
 #==================================================================================
 
 #----------------------------------------------------------------------------------
 # define the function genS() that randomly chooses an integer from 1 to 9, inclusive
 #----------------------------------------------------------------------------------
-genS() { # RANDOM randomly generates an integer in from 0 to 32768; rem in {0..8}
-	rnd=32769
-	until [ $rnd -lt 32769 ]
+genS() { # RANDOM randomly generates an integer in from 0 to 32767; rem in {0..8}
+	rnd=32760
+	until [ $rnd -lt 32760 ]
 	do
 		rnd=$[RANDOM]
-		if [ $rnd -lt 32769 ]; then echo $[rnd%9+1]; fi
+		if [ $rnd -lt 32760 ]; then echo $[rnd%9+1]; fi
 	done
 }
 
