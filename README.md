@@ -10,7 +10,7 @@
 
 This folder contains materials that allow the user to author a book containing a collection of [Musical Dice Games (MDG)](https://en.wikipedia.org/wiki/Musikalisches_W%C3%BCrfelspiel) DCSM, generated based on the rules given in C.P.E. Bach's [*Einfall, einen doppelten Contrapunct in der Octave von sechs Tacten zu machen, ohne die Regeln davon zu wissen*](https://www.jstor.org/stable/843301).
 
-To creat a book, simply [download](https://github.com/justineuro/mdgBookSVG2Kit/archive/main.zip) (or clone: `git clone https://github.com/justineuro/mdgBookSVG2Kit.git`) this project to one's computer, unzip the downloaded archive, and at the command line inside the main folder (`mdgBookSVG2Kit-main` directory) issue the following command (pre-requisites: `bash`, `abcmidi`, `abcm2ps`, `Ghostscript`, `Inkscape`, and `LaTeX`):
+To create a book, simply [download](https://github.com/justineuro/mdgBookSVG2Kit/archive/main.zip) (or clone: `git clone https://github.com/justineuro/mdgBookSVG2Kit.git`) this project to one's computer, unzip the downloaded archive, and at the command line inside the main folder (`mdgBookSVG2Kit-main` directory) issue the following command (pre-requisites: `bash`, `abcmidi`, `abcm2ps`, `Ghostscript`, `Inkscape`, and `LaTeX`):
 
 ```shell
 bash HOWTO
